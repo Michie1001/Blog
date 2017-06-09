@@ -1,0 +1,15 @@
+
+.funky
+{
+	font-size: 72px;
+	color:#708090;
+	font-family: Monotype Corsiva;
+	padding:40px 20px;
+}
+
+.button
+{
+	background-color: #f5f5f5;
+	border-radius: 5px;
+	padding: 5px;
+}
