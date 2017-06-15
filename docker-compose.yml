@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    michie_blog_db:
+        container_name: michie_blog_db
+        image: mysql/mysql-server:5.7
+        volumes:
+            - ./data:/var/lib/mysql
+        restart: always
+        env_file:
+          - ./.env
+          
+    michie_blog:
+        container_name: michie_blog
+        depends_on:
+            - michie_blog_db
+        image: creativitykills/nginx-php-server:1.1.2
+        volumes:
+            - ./src:/var/www/public
+        restart: always
+        ports:
+            - 44234:80
